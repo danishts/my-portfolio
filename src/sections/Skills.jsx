@@ -155,12 +155,12 @@ function Skills() {
       {/* <h2 className="font-bold text-[22px] text-left md:text-[30px] tracking-[0.18em] text-center">
         OTHER SKILLS:
       </h2> */}
-      <div className="w-full md:mr-11">
+      <div className="w-full mb-11 md:mr-11">
         <h2 className="font-bold mt-8 text-[22px] md:text-[30px] tracking-[0.18em] text-center lg:pl-[470px] lg:text-left">
           OTHER SKILLS:
         </h2>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-10 text-center mt-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-10 text-center mb-24 mt-6">
         <div className="flex flex-col items-center">
           <SiNodedotjs className="text-green-600 w-14 h-14 md:w-20 md:h-20" />
           {/* <p className="text-[14px] md:text-[24px] mt-2 tracking-[0.135em]"> */}
