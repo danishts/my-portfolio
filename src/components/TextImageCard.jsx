@@ -100,7 +100,7 @@ function TextImageCard() {
 
         {/* READ MORE */}
         <div className="md:absolute left-[102px] top-[233px] w-[139px] h-[25px] border-x-2 border-white flex items-center justify-center  md:mt-0">
-          <span className="font-montserrat font-semibold text-[15px] text-white text-center">
+          <span className="font-montserrat  font-semibold text-[15px] text-white text-center">
             READ MORE
           </span>
         </div>
@@ -111,7 +111,7 @@ function TextImageCard() {
         <img
           src={img}
           alt="ITB"
-          className="h-[250px] md:h-[350px] object-cover -mb-20 translate-y-6 md:translate-y-0"
+          className="h-[250px] md:h-[350px] object-cover -mb-16 translate-y-6 md:translate-y-0"
         />
       </div>
     </div>
