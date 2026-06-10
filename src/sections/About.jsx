@@ -214,7 +214,8 @@ function About() {
       {/* PARAGRAPH */}
       <p className="mt-20 w-full max-w-[763px] text-center text-[15px] leading-[139%]">
         Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius
-        finibus. Sed ornare sit amet lorem sed viverra.
+        finibus. Sed ornare sit amet lorem <br /> sed viverra. In vel urna quis libero
+        viverra facilisis ut ac est.
       </p>
 
       {/* BUTTON */}
