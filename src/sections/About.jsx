@@ -191,6 +191,7 @@
 // }
 
 // export default About;
+
 import React from "react";
 import TextCard from "../components/TextCard";
 import separator from "../assets/separatorBlack.png";
