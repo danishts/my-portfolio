@@ -21,7 +21,8 @@ function Portfolio() {
 
         <div className="absolute inset-0 flex items-center justify-center">
           
-            <TextCard title="PORTFOLIO" />
+          <TextCard title="PORTFOLIO" />
+          
         
         </div>
       </div>
