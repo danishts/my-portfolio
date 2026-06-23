@@ -4,6 +4,7 @@ import img4 from "../assets/P.png";
 import img1 from "../assets/Project.png";
 import img2 from "../assets/Rect.png";
 import img3 from "../assets/Pro.png";
+import TextCard from "../components/TextCard";
 
 function Portfolio() {
   const [active, setActive] = useState("ALL");
@@ -19,9 +20,9 @@ function Portfolio() {
         <img src={im} alt="" className="w-full h-auto object-cover" />
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="w-full max-w-[404px] border-[6px] md:border-[8px] border-black flex justify-center items-center font-bold text-[22px] md:text-[30px] tracking-[0.25em] py-4 text-center">
-            PORTFOLIO
-          </h1>
+          
+            <TextCard title="PORTFOLIO" />
+        
         </div>
       </div>
 

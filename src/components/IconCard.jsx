@@ -40,26 +40,112 @@
 
 // export default IconCard;
 
-import React from "react";
+// import React from "react";
+
+// function IconCard({ icon, title, children }) {
+//   return (
+//     <div className="flex flex-col items-start">
+//       {/* ICON + TITLE SAME LINE */}
+//       <div className="flex items-center">
+//         <img
+//           src={icon}
+//           alt="icon"
+//           className="w-[61px] h-[64px]    object-contain  "
+//         />
+
+//         <h2 className="font-montserrat font-bold  mr-48 text-[22px] -ml-3 tracking-[0.18em] ">
+//           {title}
+//         </h2>
+//       </div>
+
+//       {/* CONTENT */}
+//       <div className="mt-3 text-[14px] font-light leading-[139%] text-justify max-w-[400px]">
+//         {children}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default IconCard;
+
+//animation
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function IconCard({ icon, title, children }) {
+  const cardRef = useRef(null);
+  const iconRef = useRef(null);
+  const titleRef = useRef(null);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 🔥 ICON POP IN
+      gsap.from(iconRef.current, {
+        scale: 0,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(2)",
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 85%",
+        },
+      });
+
+      // 🔥 TITLE SLIDE FROM LEFT
+      gsap.from(titleRef.current, {
+        x: -60,
+        opacity: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 85%",
+        },
+      });
+
+      // 🔥 TEXT FADE UP
+      gsap.from(textRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 85%",
+        },
+      });
+    }, cardRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="flex flex-col items-start">
-      {/* ICON + TITLE SAME LINE */}
+    <div ref={cardRef} className="flex flex-col items-start">
+      {/* ICON + TITLE */}
       <div className="flex items-center">
         <img
+          ref={iconRef}
           src={icon}
           alt="icon"
-          className="w-[61px] h-[64px]    object-contain  "
+          className="w-[61px] h-[64px] object-contain"
         />
 
-        <h2 className="font-montserrat font-bold  mr-48 text-[22px] -ml-3 tracking-[0.18em] ">
+        <h2
+          ref={titleRef}
+          className="font-montserrat font-bold mr-48 text-[22px] -ml-3 tracking-[0.18em]"
+        >
           {title}
         </h2>
       </div>
 
       {/* CONTENT */}
-      <div className="mt-3 text-[14px] font-light leading-[139%] text-justify max-w-[400px]">
+      <div
+        ref={textRef}
+        className="mt-3 text-[14px] font-light leading-[139%] text-justify max-w-[400px]"
+      >
         {children}
       </div>
     </div>
