@@ -460,7 +460,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import ima from "../assets/ima.png";
+import ima from "../assets/danish.jpeg";
 import img from "../assets/img.png";
 import vect from "../assets/Vect.png";
 import Group from "../assets/Group.png";
